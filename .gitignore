@@ -1,0 +1,10 @@
+# Older / superseded notebooks and files
+Data_cleaning_nash_project.ipynb
+Data_cleaning_nash_project_BACKUP.ipynb
+Nash_air_bnb.ipynb
+powerbi/
+
+# Jupyter / Python / editor
+.ipynb_checkpoints/
+__pycache__/
+.vscode/
