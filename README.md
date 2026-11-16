@@ -42,22 +42,3 @@ jupyter notebook Nash_air_bnb_project.ipynb
 ```
 
 Run all cells. The notebook reads `data/Nashville_listings.csv` and writes `clean/listings_clean.csv`.
-
-## Repository layout
-
-| Path | Contents |
-|---|---|
-| `Nash_air_bnb_project.ipynb` | The full project: cleaning, charts, and regression models |
-| `data/Nashville_listings.csv` | Raw Inside Airbnb listings export for Nashville, scraped September 2026 |
-| `clean/listings_clean.csv` | Cleaned table produced by the notebook (9,319 listings × 59 columns) |
-| `images/` | Charts used in this README |
-
-## Data source
-
-The listing data comes from [Inside Airbnb](https://insideairbnb.com/get-the-data/), Nashville, Tennessee (scraped 20–21 September 2026). It is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-## Limitations
-
-- Prices are a single nightly rate captured at scrape time. They are not booked prices and not seasonal averages.
-- The size features (guests, bedrooms, beds, bathrooms) overlap heavily, so their individual coefficients should be read with care.
-- The model's errors grow at higher prices. Modeling `log(price)` is a natural next step.
