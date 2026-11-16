@@ -1,0 +1,29 @@
+# Nashville Airbnb Pricing Analysis
+
+What drives the nightly price of an Airbnb in Nashville? This project cleans the Inside Airbnb listings for Nashville and uses regression models to estimate how much each listing feature adds to or subtracts from price.
+
+1. **Cleaning:** dropped empty, redundant columns; converted price and date fields.
+2. **Validation:** checked for duplicate IDs and improbable values, flagged extreme-price outliers.
+3. **Modeling:** a simple regression (price vs. guests) as a baseline, then a multiple regression with size, amenities, reviews, host details, room type and council district. 80/20 Train Test split.
+4. **Checks:** actual-vs-predicted plot and variance inflation factors (VIF) for the overlapping size features.
+
+## Key findings
+
+- **Model fit:** guest count alone explains about 40% of price variation and all predictors together explain about 53%.
+- **Size matters most:** about +$37 per bedroom, +$39 per bathroom and +$11 per extra guest.
+- **Room and bath type:** hotel rooms run about $101 more than a comparable entire home, a shared bathroom costs about $59 less.
+- **Location:** District 19 is about $75 above District 1 for an otherwise identical listing.
+- **Longer minimum stays lower price:** about −$3.40 per required night.
+- **No measurable effect:** superhost status and days available per year.
+
+![What moves nightly price](images/price_drivers.png)
+
+## Running it
+
+1. Download the detailed Nashville **listings.csv.gz** from [Inside Airbnb](https://insideairbnb.com/get-the-data/), unzip it, and save it as `data/Nashville_listings.csv`.
+2. Install the libraries: `pip install pandas numpy matplotlib statsmodels scikit-learn`
+3. Open `Nash_air_bnb_project.ipynb` and run all cells.
+
+## Tools
+
+Python · pandas · NumPy · matplotlib · statsmodels · scikit-learn
